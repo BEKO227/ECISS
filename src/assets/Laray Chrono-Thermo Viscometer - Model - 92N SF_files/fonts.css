@@ -1,0 +1,22 @@
+@font-face {
+	font-family: 'FranklinGothicStd-Condensed';
+	src: url('fonts/FranklinGothicStd-Condensed/FranklinGothicStd-Condensed.eot');
+	src: local('☺'),url('fonts/FranklinGothicStd-Condensed/FranklinGothicStd-Condensed.svg') format('svg'), url('fonts/FranklinGothicStd-Condensed/FranklinGothicStd-Condensed.woff') format('woff'), url('fonts/FranklinGothicStd-Condensed/FranklinGothicStd-Condensed.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'FranklinGothicStd-ExtraCond';
+	src: url('fonts/FranklinGothicStd-ExtraCond/FranklinGothicStd-ExtraCond.eot');
+	src: local('☺'),url('fonts/FranklinGothicStd-ExtraCond/FranklinGothicStd-ExtraCond.svg') format('svg'), url('fonts/FranklinGothicStd-ExtraCond/FranklinGothicStd-ExtraCond.woff') format('woff'), url('fonts/FranklinGothicStd-ExtraCond/FranklinGothicStd-ExtraCond.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'FranklinGothicStd-Roman';
+	src: url('fonts/FranklinGothicStd-Roman/FranklinGothicStd-Roman.eot');
+	src: local('☺'),url('fonts/FranklinGothicStd-Roman/FranklinGothicStd-Roman.svg') format('svg'), url('fonts/FranklinGothicStd-Roman/FranklinGothicStd-Roman.woff') format('woff'), url('fonts/FranklinGothicStd-Roman/FranklinGothicStd-Roman/FranklinGothicStd-Roman.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
