@@ -6,38 +6,38 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 const partners = [
   {
     name: 'Mecmesin',
-    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/Mecmesin.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzY5ODgxMjhlLWRmZGUtNDdkMC1hNzk4LTU0MDk2NWNhYThhZCJ9.eyJ1cmwiOiJsb2dvcy9NZWNtZXNpbi5qcGciLCJpYXQiOjE3NDQ3MTI3MDUsImV4cCI6MzMyODA3MTI3MDV9.Ib91iEZrEZECcpAfkVMALe31BGeGCXUiNow23dZLcWY',
+    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/Mecmesin.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjODkxNTMxLWNjOTctNDM0OS05NThkLWZlYjJkYWE1Yjg4ZCJ9.eyJ1cmwiOiJsb2dvcy9NZWNtZXNpbi5qcGciLCJpYXQiOjE3NDgzNjg2NTEsImV4cCI6MzMyODQzNjg2NTF9.PU8iwI_vNJSaaJo1ma2KZg6dspHGzroS3BwCNB_6qQ0',
   },
   {
     name: 'VMA getzmann',
-    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/Vma%20logo.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzY5ODgxMjhlLWRmZGUtNDdkMC1hNzk4LTU0MDk2NWNhYThhZCJ9.eyJ1cmwiOiJsb2dvcy9WbWEgbG9nby5zdmciLCJpYXQiOjE3NDQ3MTI3ODEsImV4cCI6MzMyODA3MTI3ODF9.saETE_hLC-fABs3UY2DdEadeQzGC_k7V7kQTfvNza_Q',
+    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/Vma%20logo.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjODkxNTMxLWNjOTctNDM0OS05NThkLWZlYjJkYWE1Yjg4ZCJ9.eyJ1cmwiOiJsb2dvcy9WbWEgbG9nby5zdmciLCJpYXQiOjE3NDgzNjg2OTcsImV4cCI6MzMyODQzNjg2OTd9.CfA45Y1C2CI5eM-v2KTLMteoGF5KDlF1HIZtpZDW1cA',
   },
   {
     name: 'Advance lab',
-    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/AdvanceLab-logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzY5ODgxMjhlLWRmZGUtNDdkMC1hNzk4LTU0MDk2NWNhYThhZCJ9.eyJ1cmwiOiJsb2dvcy9BZHZhbmNlTGFiLWxvZ28ucG5nIiwiaWF0IjoxNzQ0NzE0NjQyLCJleHAiOjMzMjgwNzE0NjQyfQ.ywgvuRYOBtN9Q1h7esOYGU8AKtydegczIGh97pt9yGQ',
+    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/AdvanceLab-logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjODkxNTMxLWNjOTctNDM0OS05NThkLWZlYjJkYWE1Yjg4ZCJ9.eyJ1cmwiOiJsb2dvcy9BZHZhbmNlTGFiLWxvZ28ucG5nIiwiaWF0IjoxNzQ4MzY4NzE2LCJleHAiOjMzMjg0MzY4NzE2fQ.LtxqueL25vjN3IihzLBsunDkeN-xIExiXKMqyPUzGjY',
   },
   {
     name: 'Lloyds research',
-    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/lloyds%20logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzY5ODgxMjhlLWRmZGUtNDdkMC1hNzk4LTU0MDk2NWNhYThhZCJ9.eyJ1cmwiOiJsb2dvcy9sbG95ZHMgbG9nby5wbmciLCJpYXQiOjE3NDQ3MTI2NjYsImV4cCI6MzMyODA3MTI2NjZ9.OihLGcVPPOrN_ie9R5lqIomUtaeTN-wmTmtQsrbaSgk',
+    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/lloyds%20logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjODkxNTMxLWNjOTctNDM0OS05NThkLWZlYjJkYWE1Yjg4ZCJ9.eyJ1cmwiOiJsb2dvcy9sbG95ZHMgbG9nby5wbmciLCJpYXQiOjE3NDgzNjg3NDAsImV4cCI6MzMyODQzNjg3NDB9.Q-Q4o4ttxpBsXWqqmFNnCvzLjP0YmufaZBbNDr-o4K0'
   },
 ];
 
 const customers = [
   {
     name: 'Pepsico',
-    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/PepsiCo%20logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzY5ODgxMjhlLWRmZGUtNDdkMC1hNzk4LTU0MDk2NWNhYThhZCJ9.eyJ1cmwiOiJsb2dvcy9QZXBzaUNvIGxvZ28ucG5nIiwiaWF0IjoxNzQ0NDczOTEyLCJleHAiOjQ4OTgwNzM5MTJ9.VqKl8F63Vq74KusTzgEEiBrx1rnPIxyfoTqrrT-zAu4',
+    logo:'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/PepsiCo%20logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjODkxNTMxLWNjOTctNDM0OS05NThkLWZlYjJkYWE1Yjg4ZCJ9.eyJ1cmwiOiJsb2dvcy9QZXBzaUNvIGxvZ28ucG5nIiwiaWF0IjoxNzQ4MzY2MjYzLCJleHAiOjMzMjg0MzY2MjYzfQ.ykqzV1fTIg4ogM5R7kNJ7LR8KHRab1aYMMmI4dC2cj8',
   },
   {
     name: 'Egypt Foods',
-    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/egypt-foods-group.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzY5ODgxMjhlLWRmZGUtNDdkMC1hNzk4LTU0MDk2NWNhYThhZCJ9.eyJ1cmwiOiJsb2dvcy9lZ3lwdC1mb29kcy1ncm91cC5qcGciLCJpYXQiOjE3NDQ0NzUwMzgsImV4cCI6MzMyODA0NzUwMzh9.pXLemhke74MUqryfPoEPMktp-CyVWQY7jzCn1Z-DYZ8',
-  },
-  {
-    name: 'Unilever mashreq',
-    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/Unilever.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzY5ODgxMjhlLWRmZGUtNDdkMC1hNzk4LTU0MDk2NWNhYThhZCJ9.eyJ1cmwiOiJsb2dvcy9VbmlsZXZlci5wbmciLCJpYXQiOjE3NDQ0NzUyOTMsImV4cCI6MzMyODA0NzUyOTN9.L0SzNPuwh0nrdFjtKOGgExVl97VxGEHx2pE_W1pz2pE',
+    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/egypt-foods-group.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjODkxNTMxLWNjOTctNDM0OS05NThkLWZlYjJkYWE1Yjg4ZCJ9.eyJ1cmwiOiJsb2dvcy9lZ3lwdC1mb29kcy1ncm91cC5qcGciLCJpYXQiOjE3NDgzNjYzMDAsImV4cCI6MzMyODQzNjYzMDB9.8-eiXcBzPNuVeRyRE2yoKKDc831GO7r-aOXt3GaLDfk',
   },
   {
     name: 'Coca Cola',
-    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/CoCaCola.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzY5ODgxMjhlLWRmZGUtNDdkMC1hNzk4LTU0MDk2NWNhYThhZCJ9.eyJ1cmwiOiJsb2dvcy9Db0NhQ29sYS5qcGciLCJpYXQiOjE3NDQ0NzUxMTEsImV4cCI6MzMyODA0NzUxMTF9.ohktiJVe1gDRP0rZVPUl64BjupAcR3cYMsoBfhvO_mU',
+    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/CoCaCola.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjODkxNTMxLWNjOTctNDM0OS05NThkLWZlYjJkYWE1Yjg4ZCJ9.eyJ1cmwiOiJsb2dvcy9Db0NhQ29sYS5qcGciLCJpYXQiOjE3NDgzNjYzNDQsImV4cCI6MzMyODQzNjYzNDR9.pG_t522SabToxUNC__4dLhiMMHrR39iZI6BBYhDtdt0',
+  },
+  {
+    name: 'Unilever mashreq',
+    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/Unilever.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjODkxNTMxLWNjOTctNDM0OS05NThkLWZlYjJkYWE1Yjg4ZCJ9.eyJ1cmwiOiJsb2dvcy9VbmlsZXZlci5wbmciLCJpYXQiOjE3NDgzNjYzNzQsImV4cCI6MzMyODQzNjYzNzR9.QKkpyaSTBTmuR8-RiNHIBWUYhryxasP_7WHBwOut_MM',
   },
 ];
 
@@ -51,7 +51,7 @@ export default function HomeScreen() {
               Egyptian Company for Industrial & Scientific Services
             </h1>
             <p style={styles.boxText1}>
-              The Egyptian Company for Industrial & Scientific Services (ECISS) is a specialized supplier of quality control and laboratory equipment in Egypt.
+             The Egyptian Company for Industrial & Scientific Services (ECISS) is a specialized supplier of quality control and laboratory equipment in Egypt.
             </p>
           </div>
 
@@ -60,7 +60,7 @@ export default function HomeScreen() {
             <div style={styles.floatingBox}>
               <h2 style={styles.boxTitle}>What We Do?</h2>
               <p style={styles.boxText}>
-                At <strong>ECISS</strong>, we provide expert solutions in <strong>testing, measuring, and laboratory systems</strong> by representing global leaders such as <strong>Mecmesin, VMA Getzmann, Lloyd Instruments</strong>, and <strong>AdvanceLab</strong>.
+              <strong>ECISS</strong> was established in 2005, At <strong>ECISS</strong>, we provide expert solutions in <strong>testing, measuring, and laboratory systems</strong> by representing global leaders such as <strong>Mecmesin, VMA Getzmann, Lloyd Instruments</strong>, and <strong>AdvanceLab</strong>.
               </p>
               <ul style={styles.boxText}>
                 <li><strong>Installation</strong> of advanced testing and lab equipment</li>
@@ -161,7 +161,7 @@ const styles = {
     color: 'white',
   },
   heroText: {
-    fontSize: '2.5rem',
+    fontSize: '36px',
     marginBottom: 20,
   },
   floatingSection: {
@@ -170,12 +170,11 @@ const styles = {
     gap: 30,
   },
   floatingBox: {
-    backgroundColor: 'white',
     padding: 25,
     borderRadius: 10,
     boxShadow: '0px 2px 10px rgba(0,0,0,0.2)',
     backgroundColor: 'rgba(216, 218, 220, 0.7)',
-    border:"4px solid rgb(0, 0, 102)"
+    border:"solid rgb(0, 0, 102)"
 
   },
   boxAlt: {

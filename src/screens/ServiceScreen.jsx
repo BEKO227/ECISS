@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from './supabaseClient';
 
 const categoryMap = {
-  'Force & Torque Testing': ['Tourqe devices','Force devices', 'Accessories', 'Gauges'],
+  'Force & Torque Testing': ['Tourqe devices', 'Force devices', 'Accessories', 'Gauges'],
   'Disolvers & Milling Machines': ['Production', 'Laboratory', 'Accessories'],
   'Food & beverage package material Testing': ['Devices', 'Tools'],
   'Paint and Ink Testing': ['Devices', 'Tools'],
   'Food Technology Corporation (FTC)': ['Texture Analyzers'],
-  'Paper and Cardboard Testing': ['Texture Analyzers'],
+  'Medical Tests': ['Medical Devices'],
 };
 
 const websiteLinks = {
@@ -15,7 +15,7 @@ const websiteLinks = {
   'Disolvers & Milling Machines': 'https://www.vma-getzmann.com/',
   'Food & beverage package material Testing': 'https://advancelab.com/',
   'Paint and Ink Testing': 'https://www.lloydsresearch.com/',
-  'Food Technology Corporation (FTC)': 'https://www.foodtechcorp.com/',
+  'Food Technology Corporation (FTC)': 'https://www.textureanalyzers.com/products',
   'Paper and Cardboard Testing':'https://www.regmed.com.br/en/products',
 };
 
@@ -45,7 +45,10 @@ const categoryToTableMap = {
   },
   'Force devices':{
     'Force & Torque Testing':'Force devices',
-  }
+  },
+  'Medical Devices': {
+    'Medical Tests': 'Medical_Devices',
+  },
 };
 
 const getTableName = (category, testType) => {
@@ -169,7 +172,7 @@ export default function ServicesScreen() {
       </div>
 
       <p style={styles.note}>
-        Note: These are not all the products. For more, please visit the manufacturing company{' '}
+        Note: These are not all the products. For more, please visit the manufacturer {' '}
         <a
           href={websiteLinks[selectedTestType]}
           target="_blank"
@@ -294,6 +297,7 @@ const styles = {
     textAlign: 'center',
     flex: '1 0 250px',
   },
+
   imageContainer: {
     height: '150px',
     width: '100%',
@@ -334,7 +338,7 @@ const styles = {
     textDecoration: 'underline',
   },
   noResultsText: {
-    fontSize: 16,
+    fontSize: 16,                                                                                 
     color: '#888',
     textAlign: 'center',
   },

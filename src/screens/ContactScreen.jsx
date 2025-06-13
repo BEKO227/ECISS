@@ -1,29 +1,63 @@
 import React from 'react';
+import { useEffect, useState } from "react";
+import { supabase } from "./supabaseClient";
 
 const partners = [
   {
     name: 'Mecmesin',
-    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/Mecmesin.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzY5ODgxMjhlLWRmZGUtNDdkMC1hNzk4LTU0MDk2NWNhYThhZCJ9.eyJ1cmwiOiJsb2dvcy9NZWNtZXNpbi5qcGciLCJpYXQiOjE3NDQ3MTI3MDUsImV4cCI6MzMyODA3MTI3MDV9.Ib91iEZrEZECcpAfkVMALe31BGeGCXUiNow23dZLcWY',
+    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/Mecmesin.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjODkxNTMxLWNjOTctNDM0OS05NThkLWZlYjJkYWE1Yjg4ZCJ9.eyJ1cmwiOiJsb2dvcy9NZWNtZXNpbi5qcGciLCJpYXQiOjE3NDgzNjg2NTEsImV4cCI6MzMyODQzNjg2NTF9.PU8iwI_vNJSaaJo1ma2KZg6dspHGzroS3BwCNB_6qQ0',
   },
   {
     name: 'VMA getzmann',
-    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/Vma%20logo.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzY5ODgxMjhlLWRmZGUtNDdkMC1hNzk4LTU0MDk2NWNhYThhZCJ9.eyJ1cmwiOiJsb2dvcy9WbWEgbG9nby5zdmciLCJpYXQiOjE3NDQ3MTI3ODEsImV4cCI6MzMyODA3MTI3ODF9.saETE_hLC-fABs3UY2DdEadeQzGC_k7V7kQTfvNza_Q',
+    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/Vma%20logo.svg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjODkxNTMxLWNjOTctNDM0OS05NThkLWZlYjJkYWE1Yjg4ZCJ9.eyJ1cmwiOiJsb2dvcy9WbWEgbG9nby5zdmciLCJpYXQiOjE3NDgzNjg2OTcsImV4cCI6MzMyODQzNjg2OTd9.CfA45Y1C2CI5eM-v2KTLMteoGF5KDlF1HIZtpZDW1cA',
   },
   {
     name: 'Advance lab',
-    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/AdvanceLab-logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzY5ODgxMjhlLWRmZGUtNDdkMC1hNzk4LTU0MDk2NWNhYThhZCJ9.eyJ1cmwiOiJsb2dvcy9BZHZhbmNlTGFiLWxvZ28ucG5nIiwiaWF0IjoxNzQ0NzE0NjQyLCJleHAiOjMzMjgwNzE0NjQyfQ.ywgvuRYOBtN9Q1h7esOYGU8AKtydegczIGh97pt9yGQ',
+    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/AdvanceLab-logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjODkxNTMxLWNjOTctNDM0OS05NThkLWZlYjJkYWE1Yjg4ZCJ9.eyJ1cmwiOiJsb2dvcy9BZHZhbmNlTGFiLWxvZ28ucG5nIiwiaWF0IjoxNzQ4MzY4NzE2LCJleHAiOjMzMjg0MzY4NzE2fQ.LtxqueL25vjN3IihzLBsunDkeN-xIExiXKMqyPUzGjY',
   },
   {
     name: 'Lloyds research',
-    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/lloyds%20logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzY5ODgxMjhlLWRmZGUtNDdkMC1hNzk4LTU0MDk2NWNhYThhZCJ9.eyJ1cmwiOiJsb2dvcy9sbG95ZHMgbG9nby5wbmciLCJpYXQiOjE3NDQ3MTI2NjYsImV4cCI6MzMyODA3MTI2NjZ9.OihLGcVPPOrN_ie9R5lqIomUtaeTN-wmTmtQsrbaSgk',
+    logo: 'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/lloyds%20logo.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjODkxNTMxLWNjOTctNDM0OS05NThkLWZlYjJkYWE1Yjg4ZCJ9.eyJ1cmwiOiJsb2dvcy9sbG95ZHMgbG9nby5wbmciLCJpYXQiOjE3NDgzNjg3NDAsImV4cCI6MzMyODQzNjg3NDB9.Q-Q4o4ttxpBsXWqqmFNnCvzLjP0YmufaZBbNDr-o4K0'
   },
   {
     name:'Regmed',
-    logo:'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/Regmed.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzY5ODgxMjhlLWRmZGUtNDdkMC1hNzk4LTU0MDk2NWNhYThhZCJ9.eyJ1cmwiOiJsb2dvcy9SZWdtZWQucG5nIiwiaWF0IjoxNzQ1ODMwOTA3LCJleHAiOjMzMjgxODMwOTA3fQ.6Xc1L524chzqV3jVYlZ9kE0kwhvH4Pv1UsKKZVgi7UA',
+    logo:'https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/Regmed.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2NjODkxNTMxLWNjOTctNDM0OS05NThkLWZlYjJkYWE1Yjg4ZCJ9.eyJ1cmwiOiJsb2dvcy9SZWdtZWQucG5nIiwiaWF0IjoxNzQ4MzY4NjczLCJleHAiOjMzMjg0MzY4NjczfQ.0CoAmfcxWpatnKv39RFtcK9S_-8JwE4x6imoI_5OHsg',
   },
 ];
 
 export default function ContactScreen() {
+  const [contact, setContact] = useState(null);
+  const [isLoading, setisLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchContact() {
+      setisLoading(true);
+      const { data, error } = await supabase
+        .from('Contacts_info')
+        .select('Email, Phone, Telephone, Address')
+        .single(); // because only one row expected
+
+      if (error) {
+        setError(error.message);
+      } else {
+        setContact(data);
+      }
+      setisLoading(false);
+    }
+
+    fetchContact();
+  }, []);
+  
+  if (isLoading) {
+    return (
+      <div style={styles.loadingContainer}>
+        <div style={styles.spinner}></div>
+        <p style={{ marginTop: 10 }}>Loading info...</p>
+      </div>
+    );
+  }
+
   return (
     <div
       style={{
@@ -38,12 +72,10 @@ export default function ContactScreen() {
         {/* Contact Info Section */}
         <div style={styles.contactBox}>
           <h2 style={styles.heading}>Contact Us</h2>
-          <p style={styles.text}>📧 Email: amr_hashish@hotmail.com</p>
-          <p style={styles.text}>📞 Phone: +20 1000522247</p>
-          <p style={styles.text}>☎️ Telephone: 02 24548089</p>
-          <p style={styles.text}>
-            📍 Address: 53 El Maqrezy St. - Manshyet El Bakry - Misr EL Gadida - Cairo - Egypt
-          </p>
+          <p style={styles.text}>📧 Email: {contact.Email}</p>
+          <p style={styles.text}>📞 Phone: {contact.Phone}</p>
+          <p style={styles.text}>☎️ Telephone: {contact.Telephone}</p>
+          <p style={styles.text}>📍 Address: {contact.Address}</p>
         </div>
 
         {/* Partners and Map Section Inline */}
@@ -160,5 +192,21 @@ const styles = {
     height: '450px',
     overflow: 'hidden',
     borderRadius: '12px',
+  },
+  loadingContainer: {
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fafafa',
+  },
+  spinner: {
+    width: 40,
+    height: 40,
+    border: '5px solid #ccc',
+    borderTop: '5px solid #000066',
+    borderRadius: '50%',
+    animation: 'spin 1s linear infinite',
   },
 };

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import './CustomHeader.css';
 
 export default function CustomHeader() {
   const headerRef = useRef(null);
@@ -16,11 +17,24 @@ export default function CustomHeader() {
 
   return (
     <>
-      <div ref={headerRef} style={styles.header}>
-        <h1 style={styles.headerText}>
-          ECISS الشركة المصرية للخدمات العلمية الصناعية
-        </h1>
-        <nav style={styles.navbar}>
+      <div ref={headerRef} className="header">
+        <div className="header-top">
+          <img
+            src="https://bopjscwcrtsksrdtmfaz.supabase.co/storage/v1/object/sign/logos/black_bg-removebg-preview.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jYzg5MTUzMS1jYzk3LTQzNDktOTU4ZC1mZWIyZGFhNWI4OGQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJsb2dvcy9ibGFja19iZy1yZW1vdmViZy1wcmV2aWV3LnBuZyIsImlhdCI6MTc0OTM5MzAwMiwiZXhwIjozMzI4NTM5MzAwMn0.XskV--KJ3zXMN5X6Iglxji3nxCKCl-ns7gE20456PRY"
+            alt="ECISS Logo"
+            className="logo"
+          />
+          <div>
+            <h1 className="header-text">
+              Egyptian Company for Industrial & Scientific Services
+            </h1>
+            <span className="sub-text">
+              الشركة المصرية للخدمات العلمية الصناعية
+            </span>
+          </div>
+        </div>
+
+        <nav className="navbar">
           {[
             { name: 'Home', path: '/' },
             { name: 'About', path: '/about' },
@@ -30,59 +44,16 @@ export default function CustomHeader() {
             <Link
               key={name}
               to={path}
-              style={{
-                ...styles.navText,
-                ...(location.pathname === path ? styles.activeLink : {}),
-              }}
+              className={`nav-text ${
+                location.pathname === path ? 'active-link' : ''
+              }`}
             >
               {name}
             </Link>
           ))}
         </nav>
       </div>
-
-      {/* Spacer to avoid content being hidden behind fixed header */}
-      <div style={{ marginTop: '140px' }}></div>
+      <div style={{ marginTop: '160px' }}></div>
     </>
   );
 }
-
-const styles = {
-  header: {
-    backgroundColor: '#1e1e2e',
-    padding: '20px 15px',
-    borderBottom: '2px solid #ffffff55',
-    textAlign: 'center',
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    width: '100%',
-    zIndex: 1000,
-  },
-  headerText: {
-    color: 'white',
-    fontSize: 22,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  navbar: {
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    backgroundColor: '#003366',
-    padding: '10px',
-    borderRadius: 10,
-    flexWrap: 'wrap',
-  },
-  navText: {
-    color: 'white',
-    fontSize: 18,
-    fontWeight: 500,
-    textDecoration: 'none',
-    padding: '5px 10px',
-    borderRadius: 4,
-    transition: 'background 0.3s ease',
-  },
-  activeLink: {
-    backgroundColor: '#1e90ff',
-  },
-};
